@@ -1,0 +1,204 @@
+/* styles.css */
+
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #1a1a1a; /* Dark background */
+    color: #ffffff; /* White text for contrast */
+    line-height: 1.6;
+}
+
+/* Navigation bar styles */
+nav {
+    display: flex;
+    justify-content: center;
+    position: fixed; /* Keeps the nav fixed at the top */
+    top: 0; /* Aligns it to the top of the page */
+    width: 100%; /* Makes the nav full-width */
+    background: linear-gradient(to right, rgba(51, 51, 51, 0.9), rgba(51, 51, 51, 0.5)); /* Gradient background */
+    padding: 15px 0; /* Adds some padding */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Adds shadow for depth */
+    transition: background 0.3s ease; /* Smooth transition for background color */
+    z-index: 1000; /* Ensures it stays above other content */
+}
+
+/* Change background color on scroll */
+body.scrolled nav {
+    background: rgba(51, 51, 51, 0.95); /* Solid color when scrolled */
+}
+
+/* Link styles */
+nav a {
+    color: #ffffff; /* White text */
+    text-decoration: none;
+    padding: 12px 20px; /* Increased padding for better click area */
+    position: relative;
+    overflow: hidden; /* To contain the pseudo-element */
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Height of the underline */
+    background: #ffcc00; /* Underline color */
+    bottom: 0; /* Position it at the bottom */
+    left: 50%;
+    transform: translateX(-50%) scaleX(0); /* Initially hidden */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+nav a:hover::after {
+    transform: translateX(-50%) scaleX(1); /* Show underline on hover */
+}
+
+/* Main content styles */
+main {
+    padding-top: 80px; /* Space for the fixed nav */
+    text-align: center; /* Center text */
+}
+
+h1, h2 {
+    margin-bottom: 20px; /* Space below headings */
+}
+
+h1 {
+    font-size: 2.5em; /* Size of main heading */
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 2em; /* Size of subheadings */
+}
+
+/* Table styles */
+table {
+    width: 90%;
+    max-width: 800px; /* Responsive max width */
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent white for table */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+th, td {
+    text-align: center;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Semi-transparent border */
+}
+
+th {
+    background-color: rgba(255, 255, 255, 0.2); /* Light gray for header */
+}
+
+/* Form styles */
+form {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent white for forms */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s; /* Transition for hover effect */
+}
+
+form:hover {
+    transform: scale(1.02); /* Slight scale on hover */
+}
+
+/* Input and textarea styles */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="url"],
+input[type="color"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.05); /* Slightly transparent background */
+    color: #ffffff; /* White text */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+input[type="url"]:focus,
+input[type="color"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    background-color: rgba(255, 255, 255, 0.1); /* Darker on focus */
+}
+
+/* Button styles */
+input[type="submit"],
+input[type="reset"] {
+    background-color: #ffcc00; /* Bright button color */
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #ff9900; /* Darker button on hover */
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333; /* Dark background for footer */
+    color: #ffffff; /* White text */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack links on smaller screens */
+    }
+
+    nav a {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    h1 {
+        font-size: 2em; /* Smaller heading size */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Smaller subheading size */
+    }
+
+    table {
+        width: 100%; /* Full width for tables */
+    }
+
+    form {
+        width: 95%; /* Responsive form width */
+    }
+}
