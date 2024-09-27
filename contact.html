@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="schedule.html">Schedule</a>
+            <a href="questionnaire.html">Questionnaire</a>
+        </nav>
+    </header>
+    <section>
+        <p>If you have any questions or would like to reach out, please fill out the form below. I'll get back to you as soon as possible!</p>
+    </section>
+
+    <section>
+        <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+            <label for="name">Your Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Your Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="phone">Your Phone Number:</label><br>
+            <input type="tel" id="phone" name="phone" required><br><br>
+
+            <label for="subject">Subject:</label><br>
+            <select id="subject" name="subject" required>
+                <option value="">--Please choose an option--</option>
+                <option value="General Inquiry">General Inquiry</option>
+                <option value="Feedback">Feedback</option>
+                <option value="Collaboration">Collaboration</option>
+                <option value="Other">Other</option>
+            </select><br><br>
+
+            <label for="message">Your Message:</label><br>
+            <textarea id="message" name="message" rows="6" required></textarea><br><br>
+
+            <input type="submit" value="Send">
+            <input type="reset" value="Clear">
+        </form>
+    </section>
+
+</body>
+</html>
